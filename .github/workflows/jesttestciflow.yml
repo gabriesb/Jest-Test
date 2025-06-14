@@ -20,7 +20,7 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: 18
 
       - name: Instalar dependências
         run: npm install
@@ -28,6 +28,10 @@ jobs:
       - name: Instalar Jest
         run: npm install jest --save-dev
 
+      - name: Dar permissão de execução ao Jest
+        run: chmod +x ./node_modules/.bin/jest
+
       - name: Rodar testes com Jest
         run: npx jest
+
 
