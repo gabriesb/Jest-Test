@@ -17,13 +17,16 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Configurar Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
       - name: Instalar dependências
         run: npm install
+
+      - name: Instalar Jest
+        run: npm install jest --save-dev
 
       - name: Rodar testes com Jest
         run: npx jest
